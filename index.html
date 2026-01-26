@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Taplo | QR Standee </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --brand:#0f172a;
+  --accent:#2563eb;
+  --bg:#f8fafc;
+}
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111;
+}
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
+.brand{
+  text-align:center;
+  margin-bottom:20px;
+}
+.brand h1{
+  margin:10px 0 5px;
+  font-size:28px;
+  color:var(--brand);
+}
+.brand p{
+  margin:0;
+  font-size:14px;
+  color:#555;
+}
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:12px;
+  font-size:16px;
+  font-weight:600;
+  color:#fff;
+}
+.google{background:#ea4335}
+.whatsapp{background:#25d366}
+.call{background:#16a34a}
+.web{background:#2563eb}
+.nfc{background:#0f172a}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:#666;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="brand">
+    <h1>TAPLO</h1>
+    <p>[Demo Page by Freelancer of NCR]</p>
+  </div>
+
+  <div class="card">
+
+    <!-- Google Review -->
+    <a class="btn google" href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK" target="_blank">
+      ⭐ Leave Google Review
+    </a>
+
+    <!-- WhatsApp -->
+    <a class="btn whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+
+    <!-- Call -->
+    <a class="btn call" href="tel:+91XXXXXXXXXX">
+      📞 Call Now
+    </a>
+
+    <!-- Website -->
+    <a class="btn web" href="https://yourwebsite.com" target="_blank">
+      🌐 Visit Website
+    </a>
+
+    <!-- NFC Info -->
+    <div class="btn nfc">
+      📡 NFC Tap Supported
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Powered by <strong>Taplo</strong> • Smart Digital Standee
+  </div>
+
+</div>
+
+</body>
+</html>
