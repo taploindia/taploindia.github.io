@@ -2,117 +2,598 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Taplo | QR Standee </title>
+<title>Taplo – One Tap Smart QR & NFC Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
-  --brand:#0f172a;
-  --accent:#2563eb;
-  --bg:#f8fafc;
+  --bg:#0b0f14;
+  --card:#121826;
+  --accent:#3b82f6;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
 }
-*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 body{
-  margin:0;
-  background:var(--bg);
-  color:#111;
+  background: radial-gradient(circle at top, #020617, var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
 }
-.container{
-  max-width:420px;
-  margin:auto;
-  padding:20px;
-}
-.brand{
-  text-align:center;
-  margin-bottom:20px;
-}
-.brand h1{
-  margin:10px 0 5px;
-  font-size:28px;
-  color:var(--brand);
-}
-.brand p{
-  margin:0;
-  font-size:14px;
-  color:#555;
-}
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-.btn{
+
+/* ---------- HERO ---------- */
+
+.hero{
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  text-decoration:none;
-  padding:14px;
-  border-radius:12px;
-  margin-bottom:12px;
-  font-size:16px;
-  font-weight:600;
-  color:#fff;
+  padding:60px 20px;
 }
-.google{background:#ea4335}
-.whatsapp{background:#25d366}
-.call{background:#16a34a}
-.web{background:#2563eb}
-.nfc{background:#0f172a}
 
-.footer{
-  text-align:center;
-  font-size:12px;
-  color:#666;
-  margin-top:20px;
+.hero-container{
+  max-width:1100px;
+  width:100%;
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:40px;
+}
+
+.hero-left{
+  animation: slideUp 1s ease forwards;
+}
+
+.hero-badge{
+  display:inline-block;
+  padding:8px 16px;
+  background:rgba(59,130,246,0.15);
+  border:1px solid rgba(59,130,246,0.4);
+  border-radius:999px;
+  font-size:14px;
+  color:#93c5fd;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:3rem;
+  line-height:1.15;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:var(--accent);
+}
+
+.hero p{
+  font-size:1.1rem;
+  color:var(--muted);
+  max-width:520px;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#020617;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.1);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.25);
+  color:var(--text);
+}
+
+.btn-outline:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* ---------- RIGHT CARD ---------- */
+
+.hero-right{
+  position:relative;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.glass-card{
+  background:linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:32px;
+  backdrop-filter: blur(12px);
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+
+.card-title{
+  font-size:1.2rem;
+  margin-bottom:14px;
+  color:#93c5fd;
+}
+
+.card-list{
+  display:grid;
+  gap:14px;
+}
+
+.card-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  background:var(--accent);
+  border-radius:50%;
+  margin-top:6px;
+  flex-shrink:0;
+}
+
+.card-item p{
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes slideUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:900px){
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-actions{
+    justify-content:center;
+  }
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="hero">
+  <div class="hero-container">
 
-  <div class="brand">
-    <h1>TAPLO</h1>
-    <p>[Demo Page by Freelancer of NCR]</p>
-  </div>
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-badge">🚀 Smart QR & NFC Solutions</div>
+      <h1>
+        One tap for <span>menus</span>,<br>
+        reviews & follows
+      </h1>
+      <p>
+        Taplo creates premium QR & NFC products for restaurants and businesses.
+        No more messy stickers. Just tap or scan — instant action.
+      </p>
 
-  <div class="card">
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Explore Products</a>
+        <a href="#catalog" class="btn btn-outline">View Catalog</a>
+      </div>
+    </div>
 
-    <!-- Google Review -->
-    <a class="btn google" href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK" target="_blank">
-      ⭐ Leave Google Review
-    </a>
-
-    <!-- WhatsApp -->
-    <a class="btn whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-      💬 Chat on WhatsApp
-    </a>
-
-    <!-- Call -->
-    <a class="btn call" href="tel:+91XXXXXXXXXX">
-      📞 Call Now
-    </a>
-
-    <!-- Website -->
-    <a class="btn web" href="https://yourwebsite.com" target="_blank">
-      🌐 Visit Website
-    </a>
-
-    <!-- NFC Info -->
-    <div class="btn nfc">
-      📡 NFC Tap Supported
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <div class="glass-card">
+        <div class="card-title">Why Taplo?</div>
+        <div class="card-list">
+          <div class="card-item">
+            <div class="dot"></div>
+            <p>Premium Acrylic & NFC QR Stands for restaurants</p>
+          </div>
+          <div class="card-item">
+            <div class="dot"></div>
+            <p>Google Reviews, WhatsApp chat & Instagram follow</p>
+          </div>
+          <div class="card-item">
+            <div class="dot"></div>
+            <p>Works on all phones — no app required</p>
+          </div>
+          <div class="card-item">
+            <div class="dot"></div>
+            <p>Clean, professional & durable designs</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
+</section>
 
-  <div class="footer">
-    Powered by <strong>Taplo</strong> • Smart Digital Standee
+<!-- NEXT PART WILL BE PASTED BELOW THIS LINE -->
+
+  <style>
+/* ---------- SECTION BASE ---------- */
+.section{
+  padding:80px 20px;
+}
+
+.section-title{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 50px;
+}
+
+.section-title h2{
+  font-size:2.4rem;
+  margin-bottom:12px;
+}
+
+.section-title p{
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+/* ---------- PRODUCTS ---------- */
+
+.products{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:26px;
+}
+
+.product-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:20px;
+  padding:26px;
+  transition:all .3s ease;
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.product-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.product-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+}
+
+.product-badge{
+  display:inline-block;
+  background:rgba(59,130,246,.15);
+  color:#93c5fd;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:13px;
+  margin-bottom:14px;
+}
+
+.product-card h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+
+.product-card p{
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.5;
+  margin-bottom:16px;
+}
+
+.price{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.new{
+  font-size:1.3rem;
+  font-weight:700;
+}
+
+.old{
+  text-decoration:line-through;
+  color:#6b7280;
+}
+
+.product-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:999px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.25);
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  transition:.25s;
+}
+
+.product-btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* ---------- USE CASES ---------- */
+
+.use-cases{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:24px;
+}
+
+.case{
+  background:linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:18px;
+  padding:26px;
+  text-align:center;
+}
+
+.case h4{
+  margin-bottom:10px;
+  color:#93c5fd;
+}
+
+.case span{
+  font-size:.95rem;
+  color:var(--muted);
+}
+</style>
+
+<section class="section" id="catalog">
+  <div class="section-title">
+    <h2>Smart Products by Taplo</h2>
+    <p>Premium NFC & QR solutions designed for restaurants and businesses</p>
   </div>
 
-</div>
+  <div class="products">
+
+    <div class="product-card">
+      <div class="product-badge">NFC + QR</div>
+      <h3>Smart Google Review Card</h3>
+      <p>The easiest way to get instant 5-star Google reviews. Just tap or scan.</p>
+      <div class="price">
+        <div class="new">₹499</div>
+        <div class="old">₹699</div>
+      </div>
+      <a href="#" class="product-btn">Know more</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">NFC + QR</div>
+      <h3>Smart WhatsApp Chat Card</h3>
+      <p>Customers can directly start a WhatsApp chat with one tap.</p>
+      <div class="price">
+        <div class="new">₹499</div>
+        <div class="old">₹699</div>
+      </div>
+      <a href="#" class="product-btn">Know more</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">NFC + QR</div>
+      <h3>Smart Instagram Follow Card</h3>
+      <p>Grow Instagram followers instantly — no search, no typing.</p>
+      <div class="price">
+        <div class="new">₹499</div>
+        <div class="old">₹699</div>
+      </div>
+      <a href="#" class="product-btn">Know more</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Acrylic Stand</div>
+      <h3>Premium QR Standee</h3>
+      <p>Durable acrylic QR stands for tables & counters.</p>
+      <div class="price">
+        <div class="new">₹1,499</div>
+        <div class="old">₹2,299</div>
+      </div>
+      <a href="#" class="product-btn">Know more</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">
+    <h2>Perfect For</h2>
+    <p>Taplo works best where customer interaction matters</p>
+  </div>
+
+  <div class="use-cases">
+    <div class="case">
+      <h4>Restaurants & Cafes</h4>
+      <span>Digital menus & instant Google reviews</span>
+    </div>
+    <div class="case">
+      <h4>Clinics & Dental</h4>
+      <span>Professional QR stands & contact cards</span>
+    </div>
+    <div class="case">
+      <h4>Retail Stores</h4>
+      <span>WhatsApp chat & Instagram growth</span>
+    </div>
+    <div class="case">
+      <h4>Hotels</h4>
+      <span>Clean tables, better guest experience</span>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ---------- SCROLL ANIMATION ---------- */
+const cards = document.querySelectorAll('.product-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.15});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+  <style>
+/* ---------- CTA ---------- */
+.cta{
+  padding:90px 20px;
+  background:linear-gradient(145deg, rgba(59,130,246,.15), rgba(59,130,246,.02));
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cta-box{
+  max-width:1000px;
+  margin:auto;
+  background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:26px;
+  padding:50px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+}
+
+.cta h2{
+  font-size:2.2rem;
+  margin-bottom:14px;
+}
+
+.cta p{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+.cta-actions{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  justify-content:center;
+}
+
+.btn-whatsapp{
+  background:#25D366;
+  color:#021a0f;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  text-align:center;
+  transition:.25s;
+}
+
+.btn-whatsapp:hover{
+  filter:brightness(1.1);
+  transform:translateY(-2px);
+}
+
+.btn-store{
+  border:1px solid rgba(255,255,255,.3);
+  color:var(--text);
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  text-align:center;
+}
+
+.btn-store:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  padding:40px 20px;
+  text-align:center;
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+footer span{
+  color:#93c5fd;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .cta-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+</style>
+
+<section class="cta">
+  <div class="cta-box">
+    <div>
+      <h2>Upgrade your customer experience with Taplo</h2>
+      <p>
+        Replace messy stickers with premium QR & NFC solutions.
+        Get more reviews, more chats, and more trust — all with one tap.
+      </p>
+    </div>
+
+    <div class="cta-actions">
+      <a href="https://wa.me/919991342278" target="_blank" class="btn-whatsapp">
+        Chat on WhatsApp
+      </a>
+      <a href="https://mydukaan.io/taplo" target="_blank" class="btn-store">
+        View Online Store
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 <span>Taplo</span> · Smart QR & NFC Solutions · Made in India
+</footer>
+
 
 </body>
 </html>
+
