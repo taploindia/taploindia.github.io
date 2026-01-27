@@ -100,6 +100,9 @@ function renderBusiness(data) {
   setLink("#fbIcon", data.onlinePlatforms.facebook);
   setLink("#googleIcon", data.onlinePlatforms.google);
   setLink("#websiteIcon", data.onlinePlatforms.website);
+  setLink("#googleReviewBtn", data.onlinePlatforms.google);
+  setLink("#instagramBtn", data.onlinePlatforms.instagram);
+
 
   /* ===== TRUST ===== */
   renderBadges(data.trustInfo.badges);
