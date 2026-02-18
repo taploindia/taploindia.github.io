@@ -1,21 +1,21 @@
 {
   "identity": {
-    "name": "Vakratund Misal & Bhel",
+    "name": "Taplo Cafe",
     "categoryLine": "Bhel • Misal • Tea-Coffee",
     "foodType": "veg",
     "hasLogo": true
   },
 
   "contact": {
-    "primaryPhone": "+91 9561140638",
-    "secondaryPhone": " ",
-    "whatsappNumber": "+91 9561140638",
-    "email": ""
+    "primaryPhone": "+91 9991342278",
+    "secondaryPhone": "+91 9991342278",
+    "whatsappNumber": "+91 9991342278",
+    "email": "example@gmail.com"
   },
 
   "location": {
-    "fullAddress": "Jogeshwari Road, Near Bharat Petrol Pump, Kesnand, Pune, Maharashtra 412207",
-    "googleMapLink": "https://maps.app.goo.gl/dkyorHdemLMUou17A"
+    "fullAddress": "Example Road, Punjab",
+    "googleMapLink": "https://maps.app.goo.gl"
   },
 
   "openingHours": {
@@ -64,12 +64,12 @@
   },
 
   "onlinePlatforms": {
-    "instagram": "https://www.instagram.com/vakratundmisal2025/",
-    "facebook": "",
-    "google": "https://maps.app.goo.gl/dkyorHdemLMUou17A",
+    "instagram": "https://www.instagram.com/",
+    "facebook": "https://www.facebook.com/",
+    "google": "https://maps.app.goo.gl/",
     "zomato": "https://www.zomato.com/",
     "swiggy": "https://www.swiggy.com/",
-    "website": "https://rupmaxdigital.in/menu/vakratundmisalbhel/"
+    "website": "http://taploindia.github.io/menu/demowithwhatsapp"
   },
 
   "payment": {
@@ -82,7 +82,7 @@
       "Family Friendly",
       "Freshly Made"
     ],
-    "about": "Famous misal house in Kesnand serving authentic Misal, Bhel, and fresh Chai–Coffee."
+    "about": "Famous Cafe of Taplo in Punjab serving authentic Misal, Bhel, and fresh Chai–Coffee."
   },
 
   "flags": {
