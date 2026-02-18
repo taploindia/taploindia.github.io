@@ -1,0 +1,95 @@
+{
+  "identity": {
+    "name": "Vakratund Misal & Bhel",
+    "categoryLine": "Bhel • Misal • Tea-Coffee",
+    "foodType": "veg",
+    "hasLogo": true
+  },
+
+  "contact": {
+    "primaryPhone": "+91 9561140638",
+    "secondaryPhone": " ",
+    "whatsappNumber": "+91 9561140638",
+    "email": ""
+  },
+
+  "location": {
+    "fullAddress": "Jogeshwari Road, Near Bharat Petrol Pump, Kesnand, Pune, Maharashtra 412207",
+    "googleMapLink": "https://maps.app.goo.gl/dkyorHdemLMUou17A"
+  },
+
+  "openingHours": {
+    "monday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "tuesday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "wednesday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "thursday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "friday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "saturday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    },
+    "sunday": {
+      "isClosed": false,
+      "slots": [
+        { "open": "08:00", "close": "22:00" }
+      ]
+    }
+  },
+
+  "onlinePlatforms": {
+    "instagram": "https://www.instagram.com/vakratundmisal2025/",
+    "facebook": "",
+    "google": "https://maps.app.goo.gl/dkyorHdemLMUou17A",
+    "zomato": "https://www.zomato.com/",
+    "swiggy": "https://www.swiggy.com/",
+    "website": "https://rupmaxdigital.in/menu/vakratundmisalbhel/"
+  },
+
+  "payment": {
+    "enabled": true
+  },
+
+  "trustInfo": {
+    "badges": [
+      "Hygienic Food",
+      "Family Friendly",
+      "Freshly Made"
+    ],
+    "about": "Famous misal house in Kesnand serving authentic Misal, Bhel, and fresh Chai–Coffee."
+  },
+
+  "flags": {
+  "showLogo": true,
+  "showSocialLinks": true,
+  "deliveryAvailable": true,
+  "dineInAvailable": true,
+  "minimumDeliveryOrder": 299
+}
+}

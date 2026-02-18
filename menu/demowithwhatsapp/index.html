@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vakratund Misal & Bhel</title>
+
+<link rel="icon" href="/assets/images/favicon.png">
+
+<style>
+/* ======================================================
+   GLOBAL RESET
+====================================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+body{
+  background:linear-gradient(180deg,#f3f6fb,#e9edf3);
+  color:#222;
+}
+a{text-decoration:none}
+
+/* ======================================================
+   HEADER (Animated background)
+====================================================== */
+.header{
+  position:relative;
+  text-align:center;
+  padding:24px 14px 30px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#e3f2fd,#fce4ec);
+}
+.header::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(66,165,245,.35),transparent 45%),
+    radial-gradient(circle at 80% 60%,rgba(240,98,146,.35),transparent 45%);
+  animation:floatBg 14s linear infinite;
+}
+@keyframes floatBg{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(40px)}
+  100%{transform:translateY(0)}
+}
+.header > *{position:relative; z-index:2}
+
+#restaurantLogo{
+  width:100px;
+  height:100px;
+  object-fit:contain;
+  border-radius:18px;
+  background:#fff;
+  padding:6px;
+  margin-bottom:10px;
+}
+#restaurantName{
+  font-size:26px;
+  font-weight:800;
+}
+#categoryLine{
+  font-size:14px;
+  color:#555;
+  margin-top:4px;
+}
+
+/* Badge */
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  font-size:13px;
+  padding:5px 12px;
+  border-radius:999px;
+  font-weight:600;
+}
+.veg-badge{background:#e8f5e9;color:#2e7d32}
+.nonveg-badge{background:#fdecea;color:#c62828}
+
+/* ======================================================
+   CTA BUTTONS
+====================================================== */
+.quick-actions{
+  padding:14px;
+  display:grid;
+  gap:10px;
+}
+.action-row{
+  display:flex;
+  gap:10px;
+}
+.action-btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:700;
+}
+.action-btn img{width:20px}
+
+.call{background:#1e7e34;color:#fff;animation:pulse 1.6s infinite}
+.whatsapp{background:#25d366;color:#fff;animation:pulse 1.6s infinite}
+.location-btn{background:#fff;color:#1a73e8;border:1px solid #d2d6dc}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+.card{
+  background:#fff;
+  margin:12px;
+  padding:16px;
+  border-radius:16px;
+}
+
+/* ======================================================
+   CONTACT
+====================================================== */
+.contact-line{
+  font-size:14px;
+  margin-top:6px;
+}
+
+/* ======================================================
+   TRUST
+====================================================== */
+#badgeContainer{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:8px;
+}
+#badgeContainer .badge{
+  background:#f1f8e9;
+  color:#33691e;
+}
+
+/* ======================================================
+   SERVICE (Delivery / Dine-in)
+====================================================== */
+.service-badges{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+}
+.service-badges div{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  background:#f1f1f1;
+}
+
+/* ======================================================
+   MENU
+====================================================== */
+.menu-wrapper h2{
+  font-size:24px;
+  margin-bottom:14px;
+}
+.menu-category{
+  margin-bottom:26px;
+}
+.category-title{
+  font-size:21px;
+  font-weight:800;
+  margin-bottom:8px;
+  padding:8px 10px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#eef3ff,#ffffff);
+}
+.menu-block{
+  margin-top:10px;
+  padding-left:12px;
+}
+.menu-block.veg{border-left:5px solid #2e7d32}
+.menu-block.nonveg{border-left:5px solid #c62828}
+.veg-title{color:#2e7d32;font-size:17px;font-weight:700;margin-bottom:6px}
+.nonveg-title{color:#c62828;font-size:17px;font-weight:700;margin-bottom:6px}
+.menu-item{
+  padding:10px 0;
+  border-bottom:1px dashed #eee;
+}
+.item-header{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.food-icon{width:14px}
+.price-line{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  margin-left:20px;
+}
+.item-desc{
+  font-size:12px;
+  color:#666;
+  margin-left:20px;
+}
+.menu-section-divider{
+  height:2px;
+  background:linear-gradient(to right,transparent,#bbb,transparent);
+  margin-top:16px;
+}
+
+/* ======================================================
+   PAYMENT
+====================================================== */
+.payment-section{text-align:center}
+#paymentQR{
+  width:190px;
+  height:190px;
+  object-fit:contain;
+  margin:12px auto;
+}
+.payment-apps{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.payment-apps span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+  background:#f1f1f1;
+  padding:6px 12px;
+  border-radius:999px;
+}
+.payment-apps img{width:18px}
+
+/* ======================================================
+   PLATFORMS
+====================================================== */
+.platform-buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+}
+.platform-buttons a{
+  flex:1;
+  max-width:160px;
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  color:#fff;
+  font-weight:700;
+}
+.zomato{background:#e23744}
+.swiggy{background:#fc8019}
+
+/* ======================================================
+   SOCIAL
+====================================================== */
+.social-section{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+}
+.social-section a{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  color:#333;
+}
+.social-section img{width:18px}
+
+/* ======================================================
+   OPENING HOURS (LAST)
+====================================================== */
+.timing-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  padding:4px 0;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer{
+  text-align:center;
+  padding:18px;
+  font-size:13px;
+  color:#555;
+}
+.footer a{
+  color:#1a73e8;
+  font-weight:700;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <img id="restaurantLogo">
+  <h1 id="restaurantName"></h1>
+  <p id="categoryLine"></p>
+</header>
+
+<!-- CTA -->
+<section class="quick-actions">
+  <div class="action-row">
+    <a id="callPrimary" class="action-btn call">
+      <img src="/assets/icons/black-icons/call.svg"> Call
+    </a>
+    <a id="whatsappBtn" class="action-btn whatsapp">
+      <img src="/assets/icons/color-icons/whatsapp.svg"> WhatsApp
+    </a>
+  </div>
+  <a id="mapBtn" class="action-btn location-btn">
+    <img src="/assets/icons/color-icons/google-map.svg"> Get Directions
+  </a>
+</section>
+
+<!-- PLATFORMS -->
+<section class="card">
+  <h3 style="text-align:center;margin-bottom:10px">We are available on</h3>
+  <div class="platform-buttons">
+    <a id="zomatoBtn" class="zomato">Zomato</a>
+    <a id="swiggyBtn" class="swiggy">Swiggy</a>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="card">
+  <h3 style="text-align:center;margin-bottom:10px">Follow us on Social Media</h3>
+  <div id="socialSection" class="social-section">
+    <a id="instaIcon"><img src="/assets/icons/color-icons/instagram.svg">Instagram</a>
+    <a id="fbIcon"><img src="/assets/icons/color-icons/facebook.svg">Facebook</a>
+    <a id="googleIcon"><img src="/assets/icons/color-icons/google-color.svg">Google</a>
+    <a id="websiteIcon"><img src="/assets/icons/black-icons/globe.svg">Website</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="card">
+  <div class="contact-line">📞 <span id="primaryPhoneText"></span>, <span id="secondaryPhoneText"></span></div>
+  <div class="contact-line">✉️ <span id="emailText"></span></div>
+  <div class="contact-line">📍 <span id="fullAddress"></span></div>
+</section>
+   
+<!-- TRUST -->
+<section class="card">
+  <div id="badgeContainer"></div>
+  <p id="aboutText"></p>
+</section>
+
+<!-- DELIVERY / DINE-IN -->
+<section class="card">
+  <div class="service-badges">
+    <div id="deliveryInfo"></div>
+    <div id="dineInInfo"></div>
+  </div>
+</section>
+
+<!-- MENU -->
+<main class="card menu-wrapper">
+  <h2>📋 Menu</h2>
+  <div id="menuContainer"></div>
+</main>
+
+<!-- PAYMENT -->
+<section class="card payment-section">
+  <h3>💳 Pay Here</h3>
+  <img id="paymentQR">
+  <div class="payment-apps">
+    <span><img src="/assets/icons/color-icons/google-pay.svg"> GPay</span>
+    <span><img src="/assets/icons/color-icons/phonepe.svg"> PhonePe</span>
+    <span><img src="/assets/icons/color-icons/paytm.svg"> Paytm</span>
+    <span><img src="/assets/icons/color-icons/bhim-app.svg"> BHIM</span>
+    <span><img src="/assets/icons/color-icons/indian-rupee-coin.svg"> Cash</span>
+  </div>
+</section>
+
+<!-- OPENING HOURS (LAST) -->
+<section class="card">
+  <h3>⏰ Opening Hours</h3>
+  <div id="timingBox"></div>
+</section>
+
+<footer class="footer">
+  Powered by
+  <a href="https://rupmaxdigital.in/qr-menu" target="_blank">
+    RupMax Digital
+  </a>
+</footer>
+
+<!-- ===============================
+     FLOATING CART BAR
+================================ -->
+<div id="cartBar" class="cart-bar" onclick="openCartModal()">
+  <div class="cart-left">
+    <img src="/assets/icons/black-icons/food-cart.svg" class="cart-icon">
+    <div class="cart-info">
+      <div><span id="cartItemCount">0</span> Items</div>
+      <div>₹ <span id="cartTotal">0</span></div>
+    </div>
+  </div>
+
+<button id="placeOrderBtn" class="place-order-btn" onclick="openCartModal()">
+  View Cart
+</button>
+</div>
+
+<style>
+/* ===============================
+   CART BAR STYLE
+================================ */
+.cart-bar{
+  position:fixed;
+  bottom:12px;
+  left:12px;
+  right:12px;
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  z-index:9999;
+}
+.cart-bar.hidden{
+  display:none;
+}
+.cart-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.cart-icon{
+  width:26px;
+}
+.cart-info{
+  font-size:14px;
+  font-weight:700;
+}
+.place-order-btn{
+  background:#25d366;
+  color:#fff;
+  border:none;
+  padding:12px 18px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+      /* ===============================
+   ADD TO CART BUTTONS
+================================ */
+.cart-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:20px;
+  margin-top:6px;
+}
+.qty-btn{
+  border:none;
+  background:#f1f1f1;
+  padding:6px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.qty-btn img{
+  width:14px;
+}
+.qty-count{
+  font-size:14px;
+  font-weight:700;
+}
+.price-options{
+  margin-left:20px;
+  margin-top:6px;
+}
+.price-options label{
+  cursor:pointer;
+}
+
+   #addressBox.hidden{
+  display: none !important;
+}
+
+   /* ===============================
+   PRICE RADIO – PILL STYLE
+================================ */
+
+.price-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:8px 0 4px 20px;
+}
+
+.price-options label{
+  position:relative;
+  cursor:pointer;
+}
+
+/* hide default radio */
+.price-options input[type="radio"]{
+  display:none;
+}
+
+/* pill look */
+.price-options label span{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:20px;
+  border:1.5px solid #ccc;
+  font-size:13px;
+  font-weight:600;
+  background:#f7f7f7;
+  transition:.2s;
+}
+
+/* checked state */
+.price-options input[type="radio"]:checked + span{
+  background:#25d366;
+  color:#fff;
+  border-color:#25d366;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+</style>
+  
+<script src="./app.js"></script>
+   <!-- ===============================
+     CART MODAL
+================================ -->
+<div id="cartModal" class="cart-modal hidden">
+  <div class="cart-modal-box">
+    <h3>Your Cart</h3>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total-line">
+      Total: ₹ <span id="modalCartTotal">0</span>
+    </div>
+
+    <div class="cart-modal-actions">
+      <button onclick="closeCartModal()">Close</button>
+      <button class="checkout-btn" onclick="openCheckout()">Proceed</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.cart-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+display:flex;
+align-items:flex-end;
+justify-content:center;
+z-index:10000;
+}
+   
+.cart-modal.hidden{display:none;}
+/* box height fixed */
+.cart-modal-box{
+background:#fff;
+width:100%;
+max-width:520px;
+height:80vh;
+border-radius:18px 18px 0 0;
+padding:14px;
+display:flex;
+flex-direction:column;
+}
+.cart-item-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:8px 0;
+}
+.cart-item-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.cart-item-actions img{width:14px}
+.cart-total-line{
+  font-weight:800;
+  margin-top:10px;
+}
+.cart-modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+.cart-modal-actions button{
+  flex:1;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  font-weight:700;
+}
+.checkout-btn{
+  background:#25d366;
+  color:#fff;
+}
+
+   /* SCROLLABLE ITEMS AREA */
+#cartItems{
+flex:1;
+overflow-y:auto;
+margin-top:8px;
+padding-right:6px;
+}
+
+
+/* keep footer fixed */
+.cart-total-line,
+.cart-modal-actions{
+flex-shrink:0;
+}
+
+   /* ===============================
+   MENU ITEM UI POLISH (PART 1)
+================================ */
+
+.item-header{
+  align-items:flex-start;
+}
+
+.item-title-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.item-name{
+  font-size:15px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+.price-line{
+  font-size:13px;
+  font-weight:600;
+  color:#111;
+}
+
+.price-line.muted{
+  color:#777;
+  font-size:12px;
+}
+
+/* Variant pills balance */
+.price-options label span{
+  font-size:12px;
+  padding:5px 10px;
+}
+
+/* Quantity alignment */
+.cart-actions{
+  margin-left:18px;
+  margin-top:6px;
+}
+
+.qty-btn{
+  padding:5px;
+}
+
+.qty-count{
+  min-width:18px;
+  text-align:center;
+  font-size:14px;
+}
+</style>
+   <!-- ===============================
+     CHECKOUT MODAL
+================================ -->
+<div id="checkoutModal" class="cart-modal hidden">
+  <div class="cart-modal-box">
+    <h3>Checkout</h3>
+
+    <div class="checkout-field">
+      <label>Customer Name *</label>
+      <input id="customerName" type="text" placeholder="Enter your name">
+    </div>
+
+    <div class="checkout-field">
+      <label>Order Type *</label>
+      <div class="order-type">
+        <label>
+          <input type="radio" name="orderType" value="Dine-In" checked>
+          Dine-In
+        </label>
+        <label>
+          <input type="radio" name="orderType" value="Delivery">
+          Delivery
+        </label>
+      </div>
+    </div>
+
+    <div class="checkout-field hidden" id="addressBox" style="display:none;">
+      <label>Delivery Address *</label>
+      <textarea id="deliveryAddress" rows="3" placeholder="Enter delivery address"></textarea>
+    </div>
+
+    <div class="cart-modal-actions">
+      <button onclick="closeCheckout()">Back</button>
+      <button class="checkout-btn" onclick="finalPlaceOrder()">Place Order</button>
+    </div>
+  </div>
+</div>
+
+<style>
+   
+/* ===============================
+   CHECKOUT FIELD – MOBILE FIX
+================================ */
+
+/* ===============================
+   CHECKOUT FIELD – FIXED LAYOUT
+================================ */
+
+.checkout-field{
+  margin-top:16px;
+  display:flex;
+  flex-direction:column;
+}
+
+.checkout-field label{
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:6px;
+  color:#222;
+}
+
+.checkout-field input,
+.checkout-field textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1.5px solid #d0d0d0;
+  font-size:14px;
+  line-height:1.4;
+  background:#fff;
+}
+
+.checkout-field textarea{
+  min-height:90px;
+  resize:none;
+}
+
+   /* ===============================
+   DELIVERY ADDRESS – STRICT FIX
+================================ */
+
+#addressBox{
+  margin-top:18px;
+}
+
+#addressBox label{
+  display:block;
+  margin-bottom:6px;
+}
+
+#addressBox textarea{
+  display:block;
+}
+
+   /* ===============================
+   MENU ITEM – CLEAN PROFESSIONAL UI
+================================ */
+
+.menu-item{
+  padding:12px 0;
+}
+
+.item-header{
+  align-items:flex-start;
+}
+
+.item-name{
+  font-size:16px;
+  font-weight:700;
+}
+
+.price-line{
+  margin-top:2px;
+  font-size:13px;
+  color:#555;
+}
+
+/* Variant pills – compact */
+.price-options{
+  margin:8px 0 4px 20px;
+}
+
+.price-options label span{
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:16px;
+}
+
+/* Quantity controls – neat */
+.cart-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:20px;
+  margin-top:6px;
+}
+
+.qty-btn{
+  padding:6px;
+  border-radius:8px;
+}
+
+.qty-btn img{
+  width:13px;
+}
+
+.qty-count{
+  font-size:14px;
+  font-weight:700;
+  min-width:18px;
+  text-align:center;
+}
+
+   /* ===============================
+   DELIVERY ADDRESS MOBILE POLISH
+================================ */
+
+#addressBox{
+  margin-top:16px;
+}
+
+#addressBox label{
+  font-size:13px;
+  font-weight:700;
+}
+
+#addressBox textarea{
+  min-height:90px;
+}
+
+/* Safer spacing on small screens */
+@media (max-width: 480px){
+  .cart-modal-box{
+    padding:16px;
+  }
+
+  .checkout-field{
+    gap:10px;
+  }
+}
+.order-type{
+  display:flex;
+  gap:14px;
+}
+
+   /* ===============================
+   WHATSAPP CONFIRM MODAL
+================================ */
+
+.wa-btn{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:none;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.wa-btn.primary{
+  background:#25d366;
+  color:#fff;
+}
+
+.wa-btn.secondary{
+  background:#f1f1f1;
+  color:#333;
+}
+
+.wa-desc{
+  font-size:12px;
+  font-weight:500;
+  margin-top:4px;
+  opacity:.85;
+}
+
+/* success message */
+#orderSuccess{
+  background:#e8f5e9;
+  color:#2e7d32;
+  padding:14px;
+  margin:12px;
+  border-radius:14px;
+  font-weight:700;
+  text-align:center;
+}
+
+   /* ===============================
+   APP DIALOG STYLE
+================================ */
+#appDialog .cart-modal-box{
+  height:auto;
+  max-height:60vh;
+}
+
+   /* ===============================
+   MENU ITEM – SWIGGY STYLE CLEAN UI
+================================ */
+
+.menu-item{
+  padding:14px 0;
+  border-bottom:1px solid #eee;
+}
+
+.item-header{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+}
+
+.item-title-wrap{
+  display:flex;
+  flex-direction:column;
+}
+
+.item-name{
+  font-size:16px;
+  font-weight:700;
+  color:#111;
+}
+
+/* price text */
+.price-line{
+  margin-top:2px;
+  font-size:14px;
+  font-weight:600;
+  color:#444;
+}
+
+/* hide "select option below" text */
+.price-line.muted{
+  display:none;
+}
+
+/* variant buttons – segmented */
+.price-options{
+  display:flex;
+  gap:8px;
+  margin:8px 0 6px 20px;
+}
+
+.price-options label span{
+  font-size:13px;
+  padding:6px 14px;
+  border-radius:999px;
+  background:#f3f3f3;
+  border:1px solid #ddd;
+}
+
+/* selected variant */
+.price-options input[type="radio"]:checked + span{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+/* quantity buttons */
+.cart-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:20px;
+}
+
+.qty-btn{
+  background:#f1f1f1;
+  padding:8px;
+  border-radius:10px;
+}
+
+.qty-btn img{
+  width:14px;
+}
+
+.qty-count{
+  font-size:15px;
+  font-weight:700;
+  min-width:20px;
+  text-align:center;
+}
+
+   /* ===============================
+   PLATFORM BUTTON ANIMATION
+================================ */
+
+.platform-buttons a{
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle shine */
+.platform-buttons a::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+  animation:shine 3.5s infinite;
+}
+
+@keyframes shine{
+  0%{left:-100%}
+  60%{left:120%}
+  100%{left:120%}
+}
+
+/* hover lift (desktop bonus) */
+.platform-buttons a:hover{
+  transform:translateY(-2px);
+  transition:.2s;
+}
+</style>
+
+   <!-- ===============================
+     WHATSAPP RETURN CONFIRMATION
+================================ -->
+<div id="waConfirmModal" class="cart-modal hidden">
+  <div class="cart-modal-box">
+    <h3>Order Confirmation</h3>
+
+    <p style="font-size:14px;color:#555;margin-top:6px;">
+      Did you send the order message on WhatsApp?
+    </p>
+
+    <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;">
+      <button class="wa-btn secondary" onclick="waNotSent()">
+        I did NOT send the message
+        <div class="wa-desc">Continue editing your order</div>
+      </button>
+
+      <button class="wa-btn primary" onclick="waSent()">
+        I have SENT the message
+        <div class="wa-desc">Complete order & reset cart</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+   <!-- ===============================
+     APP DIALOG (REPLACES ALERT)
+================================ -->
+<div id="appDialog" class="cart-modal hidden">
+  <div class="cart-modal-box" style="max-height:auto">
+    <h3 id="dialogTitle">Notice</h3>
+    <p id="dialogMessage" style="margin-top:8px;font-size:14px;color:#555"></p>
+
+    <div class="cart-modal-actions" style="margin-top:18px">
+      <button class="checkout-btn" onclick="closeDialog()">OK</button>
+    </div>
+  </div>
+</div>
+   <style>
+/* ===============================
+   ORDER SUCCESS OVERLAY
+=============================== */
+#orderSuccessOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
+
+.order-success-box{
+  background:#ffffff;
+  padding:26px 22px;
+  border-radius:16px;
+  text-align:center;
+  max-width:320px;
+  width:90%;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.order-success-box h2{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.order-success-box p{
+  font-size:14px;
+  color:#555;
+  margin-bottom:16px;
+  line-height:1.4;
+}
+
+.order-success-box button{
+  padding:10px 18px;
+  border-radius:10px;
+  border:none;
+  background:#16a34a;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+</style>
+</body>
+</html>

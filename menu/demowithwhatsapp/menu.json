@@ -1,0 +1,86 @@
+{
+  "categories": [
+    {
+      "name": "थाळी",
+      "items": [
+        {"name":"चपाती भाजी","type":"veg","prices":[{"label":"Plate","price":60}]},
+        {"name":"डाळ राईस","type":"veg","prices":[{"label":"Plate","price":50}]},
+        {"name":"व्हेज थाळी","type":"veg","prices":[{"label":"Plate","price":80}]}
+      ]
+    },
+    {
+      "name": "चहा / कॉफी",
+      "items": [
+        {"name":"स्पेशल चहा","type":"veg","prices":[{"label":"Cup","price":12}]},
+        {"name":"ग्रीन टी","type":"veg","prices":[{"label":"Cup","price":20}]},
+        {"name":"ब्लॅक टी","type":"veg","prices":[{"label":"Cup","price":20}]},
+        {"name":"अदरक टी","type":"veg","prices":[{"label":"Cup","price":20}]},
+        {"name":"स्पेशल हॉट कॉफी","type":"veg","prices":[{"label":"Cup","price":25}]},
+        {"name":"कोल्ड कॉफी","type":"veg","prices":[{"label":"Glass","price":40}]}
+      ]
+    },
+    {
+      "name": "मिसळ",
+      "items": [
+        {"name":"स्पेशल वक्रतुंड मिसळ","type":"veg","prices":[{"label":"Plate","price":110}]},
+        {"name":"स्पेशल दही मिसळ","type":"veg","prices":[{"label":"Plate","price":79}]}
+      ]
+    },
+    {
+      "name": "भेळ",
+      "items": [
+        {"name":"स्पेशल मटकी भेळ","type":"veg","prices":[{"label":"Plate","price":60}]},
+        {"name":"स्पेशल सॅम्पल भेळ","type":"veg","prices":[{"label":"Plate","price":70}]}
+      ]
+    },
+    {
+      "name": "पोहे",
+      "items": [
+        {"name":"स्पेशल पोहे","type":"veg","prices":[{"label":"Plate","price":20}]},
+        {"name":"तरी पोहे","type":"veg","prices":[{"label":"Plate","price":30}]},
+        {"name":"दही पोहे","type":"veg","prices":[{"label":"Plate","price":30}]}
+      ]
+    },
+    {
+      "name": "भजी",
+      "items": [
+        {"name":"कांदा भजी","type":"veg","prices":[{"label":"Plate","price":30}]},
+        {"name":"बटाटा भजी","type":"veg","prices":[{"label":"Plate","price":30}]},
+        {"name":"सँडविच","type":"veg","prices":[{"label":"Plate","price":40}]}
+      ]
+    },
+    {
+      "name": "मॅगी",
+      "items": [
+        {"name":"स्पेशल प्लेन मॅगी","type":"veg","prices":[{"label":"Plate","price":40}]},
+        {"name":"मसाला मॅगी","type":"veg","prices":[{"label":"Plate","price":50}]},
+        {"name":"चीज मॅगी","type":"veg","prices":[{"label":"Plate","price":60}]}
+      ]
+    },
+    {
+      "name": "उपवासाचे पदार्थ",
+      "items": [
+        {"name":"साबुदाणा खिचडी","type":"veg","prices":[{"label":"Plate","price":40}]},
+        {"name":"साबुदाणा वडा","type":"veg","prices":[{"label":"Plate","price":50}]},
+        {"name":"फ्रेंच फ्राईज","type":"veg","prices":[{"label":"Plate","price":70}]}
+      ]
+    },
+    {
+      "name": "पराठे",
+      "items": [
+        {"name":"मेथी पराठा","type":"veg","prices":[{"label":"Plate","price":50}]},
+        {"name":"आलू पराठा","type":"veg","prices":[{"label":"Plate","price":50}]}
+      ]
+    },
+    {
+      "name": "थंड पेय",
+      "items": [
+        {"name":"ताक","type":"veg","prices":[{"label":"Glass","price":15}]},
+        {"name":"सोलकढी","type":"veg","prices":[{"label":"Glass","price":30}]},
+        {"name":"कोल्ड ड्रिंक","type":"veg","prices":[{"label":"MRP","price":20}]},
+        {"name":"पाणी बाटली (Small)","type":"veg","prices":[{"label":"MRP","price":10}]},
+        {"name":"पाणी बाटली (on MRP)","type":"veg","prices":[{"label":"MRP","price":20}]}
+      ]
+    }
+  ]
+}
