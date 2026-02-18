@@ -29,7 +29,7 @@ function renderBusiness(data) {
   setText("#categoryLine", data.identity.categoryLine);
 
   if (data.identity.hasLogo) {
-    setImage("#restaurantLogo", "./assets/logo.jpeg");
+    setImage("#restaurantLogo", "./assets/logo.png");
   }
 
   /* ===== VEG / NON-VEG BADGE ===== */
@@ -99,7 +99,7 @@ function renderBusiness(data) {
 
   /* ===== PAYMENT ===== */
   if (data.payment.enabled) {
-    setImage("#paymentQR", "./assets/payment.jpeg");
+    setImage("#paymentQR", "./assets/payment.png");
   }
 
   /* ===== ONLINE PLATFORMS (NO CHANGE) ===== */
